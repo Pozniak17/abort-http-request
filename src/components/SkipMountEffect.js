@@ -7,7 +7,6 @@ export const SkipMountEffect = () => {
     if (searchTerm === '') {
       return;
     }
-
     console.log(`Fetch data with ${searchTerm}`);
   }, [searchTerm]);
 

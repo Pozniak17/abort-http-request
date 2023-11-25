@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 const formStyles = {
   display: 'grid',
@@ -9,9 +9,13 @@ const formStyles = {
 };
 
 export const RefExample = () => {
+  // містить посилання на форму
   const formRef = useRef();
   const value = useRef(0);
 
+  console.log(formRef);
+
+  // в scrollBy передаємо значення до верху, а в behavior - прокрутка плавна 'smooth'.
   const scrollToForm = () => {
     const dims = formRef.current.getBoundingClientRect();
     window.scrollBy({
@@ -20,16 +24,14 @@ export const RefExample = () => {
     });
   };
 
-  const updateValue = () => {
-    console.log('Before: ', value.current);
+  const updatedValue = () => {
     value.current += 1;
-    console.log('After: ', value.current);
   };
 
   return (
     <>
       <div>
-        <button onClick={updateValue}>value: {value.current}</button>
+        <button onClick={updatedValue}>value: {value.current}</button>
         <button onClick={scrollToForm}>Schedule a coaching session</button>
       </div>
 

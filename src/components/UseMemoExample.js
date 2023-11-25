@@ -8,12 +8,12 @@ export const UseMemoExample = () => {
   console.log('Вычисляем value');
   const value = a + b;
 
-  const momeizedValue = useMemo(() => {
-    console.log('Вычисляем momeizedValue');
+  const memoizedValue = useMemo(() => {
+    console.log('Вычисляем memoizedValue');
     return a + b;
   }, [a, b]);
 
-  console.log(momeizedValue);
+  console.log(memoizedValue);
 
   return (
     <div>
@@ -21,7 +21,7 @@ export const UseMemoExample = () => {
       <button onClick={() => setB(prev => prev + 1)}>update b: {b}</button>
       <button onClick={() => setC(prev => prev + 1)}>update c: {c}</button>
       <p>value: {value}</p>
-      <p>momeizedValue: {momeizedValue}</p>
+      <p>memoizedValue: {memoizedValue}</p>
     </div>
   );
 };
