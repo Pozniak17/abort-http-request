@@ -31,6 +31,7 @@ const ChildComponent = () => {
         }
       }
     }
+    fetchData();
   }, []);
 
   return (
