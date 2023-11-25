@@ -1,8 +1,8 @@
 import { Layout } from './Layout';
 // import { SkipMountEffect } from './SkipMountEffect';
 // import { RefExample } from './RefExample';
-import { UseMemoExample } from './UseMemoExample';
-// import { HttpReqAbort } from './HttpReqAbort';
+// import { UseMemoExample } from './UseMemoExample';
+import { HttpReqAbort } from './HttpReqAbort';
 // import { HttpReqAbortOnEvent } from './HttpReqAbortOnEvent';
 
 export const App = () => {
@@ -10,8 +10,8 @@ export const App = () => {
     <Layout>
       {/* <SkipMountEffect /> */}
       {/* <RefExample /> */}
-      <UseMemoExample />
-      {/* <HttpReqAbort /> */}
+      {/* <UseMemoExample /> */}
+      <HttpReqAbort />
       {/* <HttpReqAbortOnEvent /> */}
     </Layout>
   );

@@ -19,28 +19,18 @@ const ChildComponent = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    const abortController = new AbortController();
-
     async function fetchData() {
       try {
         setError(false);
         const url = 'https://jsonplaceholder.typicode.com/todos1';
-        const response = await axios.get(url, {
-          signal: abortController.signal,
-        });
+        const response = await axios.get(url, {});
         setTodos(response.data);
       } catch (error) {
-        if (error.code !== 'ERR_CANCELED') {
+        if (error) {
           console.log(error);
-          setError(true);
         }
       }
     }
-    fetchData();
-
-    return () => {
-      abortController.abort();
-    };
   }, []);
 
   return (
