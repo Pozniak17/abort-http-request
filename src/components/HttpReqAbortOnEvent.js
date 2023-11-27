@@ -8,7 +8,6 @@ export const HttpReqAbortOnEvent = () => {
     if (controllerRef.current) {
       controllerRef.current.abort();
     }
-
     controllerRef.current = new AbortController();
 
     try {
